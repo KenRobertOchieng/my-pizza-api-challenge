@@ -1,0 +1,30 @@
+🧩 Models
+Implement these models inside the models/ folder.
+
+
+(i)Restaurant
+id: primary key
+name: string
+address: string
+
+Relationships:
+has many RestaurantPizzas
+
+(ii)Pizza
+id: primary key
+name: string
+ingredients: string
+
+Relationships:
+has many RestaurantPizzas
+
+(ii)RestaurantPizza (Join table)
+id: primary key
+price: integer (validation: must be between 1 and 30)
+restaurant_id: FK
+pizza_id: FK
+
+Relationships:
+belongs to Restaurant and Pizza
+
+✅ Ensure cascading deletes when a Restaurant is deleted.
